@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace API.Contracts.Models
+namespace API.Contracts.Dog.Model
 {
     [DataContract]
     public class Dog

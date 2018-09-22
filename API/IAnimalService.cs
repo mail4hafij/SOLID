@@ -1,4 +1,5 @@
-﻿using API.Contracts.Models;
+﻿using API.Contracts.Cat.Messaging;
+using API.Contracts.Dog.Messaging;
 using System.ServiceModel;
 
 namespace API.Contracts
@@ -7,9 +8,9 @@ namespace API.Contracts
     public interface IAnimalService
     {
         [OperationContract]
-        Cat GetCat();
+        GetCatResp GetCat(GetCatReq req);
 
         [OperationContract]
-        Dog GetDog();
+        GetDogResp GetDog(GetDogReq req);
     }
 }

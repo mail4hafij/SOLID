@@ -1,19 +1,16 @@
 ﻿using API.Contracts;
-using System;
-using API.Contracts.Models;
+using API.Contracts.Cat.Messaging;
+using API.Contracts.Dog.Messaging;
 
 namespace SRC
 {
-    public class AnimalService : IAnimalService
+    public class AnimalService : ServiceBase, IAnimalService
     {
-        public Cat GetCat()
-        {
-            return new Cat() { Color = "white" };
-        }
+        public AnimalService(IHandlerCaller handlerCaller) : base(handlerCaller) { }
 
-        public Dog GetDog()
-        {
-            return new Dog() { Color = "black" };
-        }
+        public GetCatResp GetCat(GetCatReq req) => Process<GetCatReq, GetCatResp>(req);
+
+        public GetDogResp GetDog(GetDogReq req) => Process<GetDogReq, GetDogResp>(req);
+
     }
 }

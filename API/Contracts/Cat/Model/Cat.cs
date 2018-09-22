@@ -1,6 +1,6 @@
 ﻿using System.Runtime.Serialization;
 
-namespace API.Contracts.Models
+namespace API.Contracts.Cat.Model
 {
     [DataContract]
     public class Cat
