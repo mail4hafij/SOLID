@@ -1,6 +1,7 @@
 ﻿using API.Contracts;
 using API.Contracts.Cat.Messaging;
 using API.Contracts.Dog.Messaging;
+using SRC.LIB;
 
 namespace SRC
 {

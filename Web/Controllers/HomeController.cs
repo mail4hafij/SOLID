@@ -9,8 +9,8 @@ namespace Web.Controllers
         public ActionResult Index()
         {
             IAnimalService svc = ServiceFactory.GetAnimalService();
-            ViewBag.colorCat = svc.GetCat().Color;
-            ViewBag.colorDog = svc.GetDog().Color;
+            ViewBag.colorCat = svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq()).Cat.Color;
+            ViewBag.colorDog = svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq()).Dog.Color;
             return View();
         }
 

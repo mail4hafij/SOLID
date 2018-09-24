@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Runtime.Serialization;
 
 namespace API.Contracts.Dog.Messaging
 {
+    [DataContract]
     public class GetDogResp : Resp
     {
+        [DataMember]
+        public Model.Dog Dog { get; set; }
     }
 }

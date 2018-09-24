@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using API.Contracts.Dog.Messaging;
+using SRC.LIB;
 
 namespace SRC.Handler.Dog
 {
-    class GetDogHandler
+    public class GetDogHandler : RequestHandler<GetDogReq, GetDogResp>
     {
+        public override GetDogResp Process(GetDogReq req)
+        {
+            return new GetDogResp() { Dog = new API.Contracts.Dog.Model.Dog() { Color = "Black" } };
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using API.Contracts;
 
-namespace SRC
+namespace SRC.LIB
 {
     public interface IHandlerCaller
     {
