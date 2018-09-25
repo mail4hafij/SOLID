@@ -1,7 +1,7 @@
 ﻿using System;
 using API.Contracts;
 
-namespace SRC.LIB
+namespace WCF.LIB
 {
     public class ResponseFactory : IResponseFactory
     {

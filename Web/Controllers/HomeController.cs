@@ -1,5 +1,4 @@
 ﻿using API;
-using API.Contracts;
 using System.Web.Mvc;
 
 namespace Web.Controllers

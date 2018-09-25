@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection;
 
 
-namespace SRC.LIB
+namespace WCF.LIB
 {
     public abstract class RequestHandler<TReq, TResp> where TReq : Req, new() where TResp : Resp, new()
     {

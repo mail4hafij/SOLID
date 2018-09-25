@@ -1,7 +1,7 @@
 ﻿using API.Contracts.Cat.Messaging;
-using SRC.LIB;
+using WCF.LIB;
 
-namespace SRC.Handler.Cat
+namespace WCF.Handler.Cat
 {
     public class GetCatHandler : RequestHandler<GetCatReq, GetCatResp>
     {

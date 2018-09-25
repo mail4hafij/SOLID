@@ -1,5 +1,4 @@
-﻿using API.Contracts;
-using System;
+﻿using System;
 using System.ServiceModel;
 
 namespace API
@@ -8,30 +7,33 @@ namespace API
     {
         public static IAnimalService GetAnimalService()
         {
-            //Create a ChannelFactory  
-            //Required Namespace: using System.ServiceModel;  
-            //Required Namespace: using ServiceLibrary;  
+            // Create a ChannelFactory  
+            // Required Namespace: using System.ServiceModel;  
+            // Required Namespace: using ServiceLibrary;  
             ChannelFactory<IAnimalService> channelFactory = null;
 
             try
             {
-                //Create a binding of the type exposed by service  
+                // Create a binding of the type exposed by service  
                 BasicHttpBinding binding = new BasicHttpBinding();
 
-                //Create EndPoint address  
-                EndpointAddress endpointAddress = new EndpointAddress("http://localhost:8733/SRC/AnimalService");
+                // EndPoint address hosted in IIS 
+                // EndpointAddress endpointAddress = new EndpointAddress("http://localhost:8733/SRC/AnimalService");
+                // EndPoint address selfhosted
+                EndpointAddress endpointAddress = new EndpointAddress("http://localhost:8734/SRC/AnimalService");
 
-                //Pass Binding and EndPoint address to ChannelFactory  
+
+                // Pass Binding and EndPoint address to ChannelFactory  
                 channelFactory = new ChannelFactory<IAnimalService>(binding, endpointAddress);
 
-                //Now create the new channel as below  
+                // Now create the new channel as below  
                 IAnimalService channel = channelFactory.CreateChannel();
 
                 return channel;
             }
             catch (TimeoutException)
             {
-                //Timeout error  
+                // Timeout error  
                 if (channelFactory != null)
                     channelFactory.Abort();
 
@@ -46,7 +48,7 @@ namespace API
             }
             catch (CommunicationException)
             {
-                //Communication error  
+                // Communication error  
                 if (channelFactory != null)
                     channelFactory.Abort();
 

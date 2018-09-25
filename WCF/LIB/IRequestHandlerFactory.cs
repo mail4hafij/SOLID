@@ -1,6 +1,6 @@
 ﻿using API.Contracts;
 
-namespace SRC.LIB
+namespace WCF.LIB
 {
     public interface IRequestHandlerFactory
     {

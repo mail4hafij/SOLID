@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SRC.LIB
+namespace WCF.LIB
 {
     public static class CollectionExtensions
     {

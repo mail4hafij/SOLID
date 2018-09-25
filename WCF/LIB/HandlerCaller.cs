@@ -1,7 +1,7 @@
 ﻿using API.Contracts;
 using System;
 
-namespace SRC.LIB
+namespace WCF.LIB
 {
     public class HandlerCaller : IHandlerCaller
     {

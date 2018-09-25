@@ -2,7 +2,7 @@
 using API.Contracts.Dog.Messaging;
 using System.ServiceModel;
 
-namespace API.Contracts
+namespace API
 {
     [ServiceContract]
     public interface IAnimalService

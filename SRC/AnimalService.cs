@@ -1,17 +1,21 @@
-﻿using API.Contracts;
+﻿using API;
 using API.Contracts.Cat.Messaging;
 using API.Contracts.Dog.Messaging;
-using SRC.LIB;
 
-namespace SRC
+
+namespace WCFIIS
 {
-    public class AnimalService : ServiceBase, IAnimalService
+    public class AnimalService : IAnimalService
     {
-        public AnimalService(IHandlerCaller handlerCaller) : base(handlerCaller) { }
+        public GetCatResp GetCat(GetCatReq req)
+        {
+            return new GetCatResp() { Cat = new API.Contracts.Cat.Model.Cat() { Color = "White" } };
+        }
 
-        public GetCatResp GetCat(GetCatReq req) => Process<GetCatReq, GetCatResp>(req);
-
-        public GetDogResp GetDog(GetDogReq req) => Process<GetDogReq, GetDogResp>(req);
+        public GetDogResp GetDog(GetDogReq req)
+        {
+            return new GetDogResp() { Dog = new API.Contracts.Dog.Model.Dog() { Color = "Black" } };
+        }
 
     }
 }

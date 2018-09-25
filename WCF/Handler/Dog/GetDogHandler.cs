@@ -1,7 +1,7 @@
 ﻿using API.Contracts.Dog.Messaging;
-using SRC.LIB;
+using WCF.LIB;
 
-namespace SRC.Handler.Dog
+namespace WCF.Handler.Dog
 {
     public class GetDogHandler : RequestHandler<GetDogReq, GetDogResp>
     {
