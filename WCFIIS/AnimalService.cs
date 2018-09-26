@@ -5,6 +5,7 @@ using API.Contracts.Dog.Messaging;
 
 namespace WCFIIS
 {
+    
     public class AnimalService : IAnimalService
     {
         public GetCatResp GetCat(GetCatReq req)

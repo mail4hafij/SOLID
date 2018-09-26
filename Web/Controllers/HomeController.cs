@@ -1,7 +1,7 @@
 ﻿using API;
 using System.Web.Mvc;
 
-namespace Web.Controllers
+namespace WEB.Controllers
 {
     public class HomeController : Controller
     {

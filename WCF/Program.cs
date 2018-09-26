@@ -17,11 +17,12 @@ namespace WCF
                 var kernel = new StandardKernel();
                 kernel.Load(Assembly.GetExecutingAssembly());
 
-                // Get the HandlerCaller instance which was bind in the Binding.cs class.
+                // Get the HandlerCaller instance which was bound in the Binding.cs class.
                 var handler = kernel.Get<IHandlerCaller>();
                 var animalService = new AnimalService(handler);
                 svcHost = new ServiceHost(animalService);
-                svcHost.Open(); Console.WriteLine("\n\nService is Running");
+                svcHost.Open();
+                Console.WriteLine("\n\nService is Running");
             }
             catch (Exception eX)
             {
