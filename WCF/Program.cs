@@ -14,11 +14,17 @@ namespace WCF
             ServiceHost svcHost = null;
             try
             {
+                /*
+                // Option1: Using NijectModule. See the class Bindings
                 var kernel = new StandardKernel();
                 kernel.Load(Assembly.GetExecutingAssembly());
-
-                // Get the HandlerCaller instance which was bound in the Binding.cs class.
                 var handler = kernel.Get<IHandlerCaller>();
+                */
+
+                // Option2: Much preferable way I think.
+                var container = new Container();
+                var handler = container.Get<IHandlerCaller>();
+
                 var animalService = new AnimalService(handler);
                 svcHost = new ServiceHost(animalService);
                 svcHost.Open();

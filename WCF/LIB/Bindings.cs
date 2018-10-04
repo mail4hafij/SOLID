@@ -7,6 +7,12 @@ using API.Contracts.Dog.Messaging;
 
 namespace WCF.LIB
 {
+    /// <summary>
+    /// Using NijectModule 
+    /// The class name can be anything. 
+    /// Just need to override the Load function and 
+    /// bind all the classes.
+    /// </summary>
     public class Bindings : NinjectModule
     {
         public override void Load()

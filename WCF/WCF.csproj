@@ -57,8 +57,9 @@
     <Compile Include="AnimalService.cs" />
     <Compile Include="Handler\Cat\GetCatHandler.cs" />
     <Compile Include="Handler\Dog\GetDogHandler.cs" />
-    <Compile Include="LIB\Binding.cs" />
+    <Compile Include="LIB\Bindings.cs" />
     <Compile Include="LIB\CollectionExtensions.cs" />
+    <Compile Include="LIB\Container.cs" />
     <Compile Include="LIB\HandlerCaller.cs" />
     <Compile Include="LIB\IHandlerCaller.cs" />
     <Compile Include="LIB\IRequestHandlerFactory.cs" />
