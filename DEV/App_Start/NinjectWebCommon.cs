@@ -40,7 +40,8 @@ namespace WEB.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            var kernel = new StandardKernel();
+            // Here we are going to use WCF container.
+            var kernel = new WCF.LIB.Container()._kernel;
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
@@ -63,14 +64,8 @@ namespace WEB.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             // Do all the bindings here.
-            
-            // Option 1: We connect to a Service using ServiceFactory that is hosted 
-            // either in windows service or IIS.
-            // kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService());
-
-            // Option 2: We connect to a Service using ServiceFactory that is not hosted but uses the DEV web project.
-            // Inside the DEV web project connects internally to WCF project.
-            kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService("http://localhost:54396/api"));
+            // Also look up at the CreateKernel method where we use kernel from WCF.
+            kernel.Bind<IAnimalService>().To<WCF.AnimalService>();
         }
     }
 }

@@ -9,28 +9,28 @@ namespace WCF.LIB
 {
     public class Container
     {
-        protected IKernel Kernel;
+        public IKernel _kernel;
 
         public Container()
         {
-            Kernel = new StandardKernel();
+            _kernel = new StandardKernel();
 
             // Do all the bindings here.
-            Kernel.Bind<RequestHandler<GetCatReq, GetCatResp>>().To<GetCatHandler>();
-            Kernel.Bind<RequestHandler<GetDogReq, GetDogResp>>().To<GetDogHandler>();
-            Kernel.Bind<IResponseFactory>().To<ResponseFactory>();
-            Kernel.Bind<IRequestHandlerFactory>().ToFactory();
-            Kernel.Bind<IHandlerCaller>().To<HandlerCaller>();
+            _kernel.Bind<RequestHandler<GetCatReq, GetCatResp>>().To<GetCatHandler>();
+            _kernel.Bind<RequestHandler<GetDogReq, GetDogResp>>().To<GetDogHandler>();
+            _kernel.Bind<IResponseFactory>().To<ResponseFactory>();
+            _kernel.Bind<IRequestHandlerFactory>().ToFactory();
+            _kernel.Bind<IHandlerCaller>().To<HandlerCaller>();
         }
 
         public T Get<T>()
         {
-            return Kernel.Get<T>();
+            return _kernel.Get<T>();
         }
 
         public void Rebind<T>(T obj)
         {
-            Kernel.Rebind<T>().ToConstant(obj).InSingletonScope();
+            _kernel.Rebind<T>().ToConstant(obj).InSingletonScope();
         }
     }
 }

@@ -69,5 +69,60 @@ namespace API
                 throw;
             }
         }
+
+        public static IAnimalService GetAnimalService(string config)
+        {
+            ChannelFactory<IAnimalService> channelFactory = null;
+
+            try
+            {
+                // Create a binding of the type exposed by service  
+                BasicHttpBinding httpBinding = new BasicHttpBinding();
+            
+                // EndPoint address 
+                EndpointAddress endpointAddress = new EndpointAddress(config);
+                
+
+
+                // Pass Binding and EndPoint address to ChannelFactory using httpBinding
+                channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddress);
+                
+
+                // Now create the new channel as below
+                IAnimalService channel = channelFactory.CreateChannel();
+
+                return channel;
+            }
+            catch (TimeoutException)
+            {
+                // Timeout error  
+                if (channelFactory != null)
+                    channelFactory.Abort();
+
+                throw;
+            }
+            catch (FaultException)
+            {
+                if (channelFactory != null)
+                    channelFactory.Abort();
+
+                throw;
+            }
+            catch (CommunicationException)
+            {
+                // Communication error  
+                if (channelFactory != null)
+                    channelFactory.Abort();
+
+                throw;
+            }
+            catch (Exception)
+            {
+                if (channelFactory != null)
+                    channelFactory.Abort();
+
+                throw;
+            }
+        }
     }
 }
