@@ -13,10 +13,11 @@ namespace WCF.LIB
     /// Just need to override the Load function and 
     /// bind all the classes.
     /// </summary>
-    public class Bindings : NinjectModule
+    public class Module : NinjectModule
     {
         public override void Load()
         {
+            // Do all the bindings here.
             Bind<RequestHandler<GetCatReq, GetCatResp>>().To<GetCatHandler>();
             Bind<RequestHandler<GetDogReq, GetDogResp>>().To<GetDogHandler>();
             Bind<IResponseFactory>().To<ResponseFactory>();

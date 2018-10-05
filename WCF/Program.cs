@@ -15,15 +15,16 @@ namespace WCF
             try
             {
                 /*
-                // Option1: Using NijectModule. See the class Bindings
+                // Option1: Using NijectModule. See the class Module.
                 var kernel = new StandardKernel();
                 kernel.Load(Assembly.GetExecutingAssembly());
                 var handler = kernel.Get<IHandlerCaller>();
                 */
-
-                // Option2: Much preferable way I think.
+                
+                // Option2: Much preferable way I think. See the class Container.
                 var container = new Container();
                 var handler = container.Get<IHandlerCaller>();
+                
 
                 var animalService = new AnimalService(handler);
                 svcHost = new ServiceHost(animalService);

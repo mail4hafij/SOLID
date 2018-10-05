@@ -15,6 +15,7 @@ namespace WCF.LIB
         {
             Kernel = new StandardKernel();
 
+            // Do all the bindings here.
             Kernel.Bind<RequestHandler<GetCatReq, GetCatResp>>().To<GetCatHandler>();
             Kernel.Bind<RequestHandler<GetDogReq, GetDogResp>>().To<GetDogHandler>();
             Kernel.Bind<IResponseFactory>().To<ResponseFactory>();

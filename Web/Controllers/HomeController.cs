@@ -5,11 +5,18 @@ namespace WEB.Controllers
 {
     public class HomeController : Controller
     {
+        private IAnimalService _svc;
+
+        // Constructor injection. Checkout NinjectWebCommon class.
+        public HomeController(IAnimalService svc)
+        {
+            _svc = svc;
+        }
+
         public ActionResult Index()
         {
-            IAnimalService svc = ServiceFactory.GetAnimalService();
-            ViewBag.colorCat = svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq()).Cat.Color;
-            ViewBag.colorDog = svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq()).Dog.Color;
+            ViewBag.colorCat = _svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq()).Cat.Color;
+            ViewBag.colorDog = _svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq()).Dog.Color;
             return View();
         }
 
