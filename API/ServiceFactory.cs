@@ -18,6 +18,7 @@ namespace API
                 BasicHttpBinding httpBinding = new BasicHttpBinding();
                 NetTcpBinding tcpBinding = new NetTcpBinding();
 
+
                 // EndPoint address hosted in IIS 
                 // EndpointAddress endpointAddress = new EndpointAddress("http://localhost:8733/WCFIIS/AnimalService");
                 // EndPoint http address selfhosted
@@ -25,8 +26,7 @@ namespace API
                 // EndPoint tcp address selfhosted
                 EndpointAddress endpointAddress = new EndpointAddress("net.tcp://localhost:8735/WCF/AnimalService");
 
-
-
+                
                 // Pass Binding and EndPoint address to ChannelFactory using httpBinding
                 // channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddress);
                 // Pass Binding and EndPoint address to ChannelFactory using tcpBinding
@@ -70,7 +70,7 @@ namespace API
             }
         }
 
-        public static IAnimalService GetAnimalService(string config)
+        public static IAnimalService GetAnimalService(string http)
         {
             ChannelFactory<IAnimalService> channelFactory = null;
 
@@ -80,14 +80,11 @@ namespace API
                 BasicHttpBinding httpBinding = new BasicHttpBinding();
             
                 // EndPoint address 
-                EndpointAddress endpointAddress = new EndpointAddress(config);
+                EndpointAddress endpointAddress = new EndpointAddress(http);
                 
-
-
                 // Pass Binding and EndPoint address to ChannelFactory using httpBinding
                 channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddress);
                 
-
                 // Now create the new channel as below
                 IAnimalService channel = channelFactory.CreateChannel();
 
