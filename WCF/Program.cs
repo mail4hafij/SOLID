@@ -2,6 +2,7 @@
 using System;
 using System.Reflection;
 using System.ServiceModel;
+using WCF.Ioc;
 using WCF.LIB;
 
 

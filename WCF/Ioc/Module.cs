@@ -4,8 +4,9 @@ using WCF.Handler.Cat;
 using WCF.Handler.Dog;
 using API.Contracts.Cat.Messaging;
 using API.Contracts.Dog.Messaging;
+using WCF.LIB;
 
-namespace WCF.LIB
+namespace WCF.Ioc
 {
     /// <summary>
     /// Using NijectModule 
@@ -18,11 +19,13 @@ namespace WCF.LIB
         public override void Load()
         {
             // Do all the bindings here.
+            /*
             Bind<RequestHandler<GetCatReq, GetCatResp>>().To<GetCatHandler>();
             Bind<RequestHandler<GetDogReq, GetDogResp>>().To<GetDogHandler>();
             Bind<IResponseFactory>().To<ResponseFactory>();
             Bind<IRequestHandlerFactory>().ToFactory();
             Bind<IHandlerCaller>().To<HandlerCaller>();
+            */
         }
     }
 }

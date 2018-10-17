@@ -41,7 +41,7 @@ namespace WEB.App_Start
         private static IKernel CreateKernel()
         {
             // Here we are going to use WCF container.
-            var kernel = new WCF.LIB.Container()._kernel;
+            var kernel = new WCF.Ioc.Container()._kernel;
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
