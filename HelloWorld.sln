@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WEB", "WEB\WEB.csproj", "{0
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DEV", "DEV\DEV.csproj", "{ECAC15E0-3F2E-4A9F-ACA8-6F68192FD7B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTAPI", "RESTAPI\RESTAPI.csproj", "{8603D3FE-080C-4AF0-BAB5-A47A2D35E90C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,12 @@ Global
 		{ECAC15E0-3F2E-4A9F-ACA8-6F68192FD7B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ECAC15E0-3F2E-4A9F-ACA8-6F68192FD7B6}.Test|Any CPU.ActiveCfg = Test|Any CPU
 		{ECAC15E0-3F2E-4A9F-ACA8-6F68192FD7B6}.Test|Any CPU.Build.0 = Test|Any CPU
+		{8603D3FE-080C-4AF0-BAB5-A47A2D35E90C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8603D3FE-080C-4AF0-BAB5-A47A2D35E90C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8603D3FE-080C-4AF0-BAB5-A47A2D35E90C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8603D3FE-080C-4AF0-BAB5-A47A2D35E90C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8603D3FE-080C-4AF0-BAB5-A47A2D35E90C}.Test|Any CPU.ActiveCfg = Release|Any CPU
+		{8603D3FE-080C-4AF0-BAB5-A47A2D35E90C}.Test|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

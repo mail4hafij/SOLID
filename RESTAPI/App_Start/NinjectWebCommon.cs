@@ -3,14 +3,15 @@ using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 using Ninject;
 using Ninject.Web.Common;
 using Ninject.Web.Common.WebHost;
+using RESTAPI.App_Start;
 using System;
 using System.Web;
-using WEB.App_Start;
+
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(NinjectWebCommon), "Stop")]
 
-namespace WEB.App_Start
+namespace RESTAPI.App_Start
 {
     public static class NinjectWebCommon
     {
@@ -63,7 +64,7 @@ namespace WEB.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             // Do all the bindings here.
-            
+
             // Option 1: We can connect to a Service using ServiceFactory that is hosted 
             // either in windows service or IIS.
             // kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService());
