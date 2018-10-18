@@ -17,6 +17,7 @@ namespace WEB.Controllers
         {
             ViewBag.colorCat = _svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq()).Cat.Color;
             ViewBag.colorDog = _svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq()).Dog.Color;
+            ViewBag.colorTiger = _svc.GetTiger(new API.Contracts.Tiger.Messaging.GetTigerReq()).Tiger.Color;
             return View();
         }
 

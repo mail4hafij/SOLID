@@ -1,6 +1,6 @@
 ﻿using API.Contracts.Dog.Messaging;
-using WCF.Database.Data;
-using WCF.Database.Repository;
+using WCF.HelloWorld.Data;
+using WCF.HelloWorld.Repository;
 using WCF.LIB;
 
 namespace WCF.Handler.Dog

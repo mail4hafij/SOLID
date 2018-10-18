@@ -1,7 +1,7 @@
 ﻿using API;
 using API.Contracts.Cat.Messaging;
 using API.Contracts.Dog.Messaging;
-
+using API.Contracts.Tiger.Messaging;
 
 namespace WCFIIS
 {
@@ -18,5 +18,9 @@ namespace WCFIIS
             return new GetDogResp() { Dog = new API.Contracts.Dog.Model.Dog() { Color = "Black" } };
         }
 
+        public GetTigerResp GetTiger(GetTigerReq req)
+        {
+            return new GetTigerResp() { Tiger = new API.Contracts.Tiger.Model.Tiger() { Color = "Yellow" } };
+        }
     }
 }

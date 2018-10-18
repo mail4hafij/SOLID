@@ -1,7 +1,7 @@
 ﻿using API.Contracts.Cat.Messaging;
-using WCF.Database;
-using WCF.Database.Data;
-using WCF.Database.Repository;
+using WCF.HelloWorld;
+using WCF.HelloWorld.Data;
+using WCF.HelloWorld.Repository;
 using WCF.LIB;
 
 namespace WCF.Handler.Cat

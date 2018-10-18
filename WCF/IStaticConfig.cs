@@ -8,6 +8,8 @@ namespace WCF
 {
     public interface IStaticConfig
     {
-        string ConnectionString { get; }
+        string ConnectionStringHelloWorld { get; }
+
+        string ConnectionStringLoremIpsum { get; }
     }
 }

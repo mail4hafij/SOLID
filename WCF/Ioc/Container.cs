@@ -2,17 +2,23 @@
 using API.Contracts.Dog.Messaging;
 using Ninject;
 using Ninject.Extensions.Factory;
-using WCF.Database;
-using WCF.Database.Data;
-using WCF.Database.Data.Mapper;
-using WCF.Database.Logic;
-using WCF.Database.Repository;
-using WCF.Database.Repository.Cat;
-using WCF.Database.Repository.Dog;
+using WCF.HelloWorld;
+using WCF.HelloWorld.Data;
+using WCF.HelloWorld.Data.Mapper;
+using WCF.HelloWorld.Logic;
+using WCF.HelloWorld.Repository;
+using WCF.HelloWorld.Repository.Cat;
+using WCF.HelloWorld.Repository.Dog;
 using WCF.Handler.Cat;
 using WCF.Handler.Dog;
 using WCF.LIB;
-
+using WCF.LoremIpsum;
+using WCF.LoremIpsum.Logic;
+using WCF.LoremIpsum.Repository;
+using WCF.LoremIpsum.Data;
+using WCF.LoremIpsum.Repository.Tiger;
+using WCF.LoremIpsum.Data.Mapper;
+using API.Contracts.Tiger.Messaging;
 
 namespace WCF.Ioc
 {
@@ -24,31 +30,76 @@ namespace WCF.Ioc
         {
             _kernel = new StandardKernel();
 
-            // Repositories
+
+            BindRepositories();
+            BindMappers();
+            BindLogic();
+            BindFactories();
+            BindHandlers();
+
+
+            // Static config
+            _kernel.Bind<IStaticConfig>().To<StaticConfig>();
+            // UnitOfWorkFactory
+            _kernel.Bind<IUnitOfWorkFactory>().To<UnitOfWorkFactory>();
+            // Lib
+            _kernel.Bind<IResponseFactory>().To<ResponseFactory>();
+            _kernel.Bind<IHandlerCaller>().To<HandlerCaller>();
+            _kernel.Bind<IRequestHandlerFactory>().ToFactory();
+        }
+
+        private void BindRepositories()
+        {
+            // (helloworld)
             _kernel.Bind<ICatRepository>().To<CatRepository>();
             _kernel.Bind<IDogRepository>().To<DogRepository>();
 
-            // Mappers
+            // (loremipsum)
+            _kernel.Bind<ITigerRepository>().To<TigerRepository>();
+        }
+
+        private void BindMappers()
+        {
+            // (helloworld)
             _kernel.Bind<ICatMapper>().To<CatMapper>();
             _kernel.Bind<IDogMapper>().To<DogMapper>();
 
-            // Database factories
-            _kernel.Bind<IStaticConfig>().To<StaticConfig>();
-            _kernel.Bind<IDatabaseService>().To<HelloWorldDatabaseService>();
+            // (loremipsum)
+            _kernel.Bind<ITigerMapper>().To<TigerMapper>();
+        }
+
+        private void BindLogic()
+        {
+
+        }
+
+        private void BindFactories()
+        {
+            // Database factories (helloworld)
+            _kernel.Bind<IHelloWorldDatabaseService>().To<HelloWorldDatabaseService>();
             _kernel.Bind<IHelloWorldLogicFactory>().ToFactory();
             _kernel.Bind<IHelloWorldRepositoryFactory>().ToFactory();
             _kernel.Bind<IHelloWorldMapperFactory>().ToFactory();
-            _kernel.Bind<IUnitOfWorkFactory>().To<UnitOfWorkFactory>();
 
+            // Database factories (loremipsum)
+            _kernel.Bind<ILoremIpsumDatabaseService>().To<LoremIpsumDatabaseService>();
+            _kernel.Bind<ILoremIpsumLogicFactory>().ToFactory();
+            _kernel.Bind<ILoremIpsumRepositoryFactory>().ToFactory();
+            _kernel.Bind<ILoremIpsumMapperFactory>().ToFactory();
+        }
 
-            // Do all the bindings here.
+        private void BindHandlers()
+        {
+            // (helloworld)
             _kernel.Bind<RequestHandler<GetCatReq, GetCatResp>>().To<GetCatHandler>();
             _kernel.Bind<RequestHandler<GetDogReq, GetDogResp>>().To<GetDogHandler>();
-            _kernel.Bind<IResponseFactory>().To<ResponseFactory>();
-            _kernel.Bind<IRequestHandlerFactory>().ToFactory();
-            _kernel.Bind<IHandlerCaller>().To<HandlerCaller>();
 
+            // (loremipsum)
+            _kernel.Bind<RequestHandler<GetTigerReq, GetTigerResp>>().To<GetTigerHandler>();
         }
+
+
+
 
         public T Get<T>()
         {

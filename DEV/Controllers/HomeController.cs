@@ -19,8 +19,8 @@ namespace DEV.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.colorCat = _svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq()).Cat.Color;
-            ViewBag.colorDog = _svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq()).Dog.Color;
+            ViewBag.colorCat = "World"; //_svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq()).Cat.Color;
+            ViewBag.colorDog = "Hello"; //_svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq()).Dog.Color;
             return View();
         }
 

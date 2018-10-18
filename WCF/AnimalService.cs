@@ -1,6 +1,7 @@
 ﻿using API;
 using API.Contracts.Cat.Messaging;
 using API.Contracts.Dog.Messaging;
+using API.Contracts.Tiger.Messaging;
 using System.ServiceModel;
 using WCF.LIB;
 
@@ -14,6 +15,8 @@ namespace WCF
         public GetCatResp GetCat(GetCatReq req) => Process<GetCatReq, GetCatResp>(req);
 
         public GetDogResp GetDog(GetDogReq req) => Process<GetDogReq, GetDogResp>(req);
+
+        public GetTigerResp GetTiger(GetTigerReq req) => Process<GetTigerReq, GetTigerResp>(req);
 
     }
 }

@@ -59,6 +59,9 @@
     <Compile Include="Contracts\Header.cs" />
     <Compile Include="Contracts\Req.cs" />
     <Compile Include="Contracts\Resp.cs" />
+    <Compile Include="Contracts\Tiger\Messaging\GetTigerReq.cs" />
+    <Compile Include="Contracts\Tiger\Messaging\GetTigerResp.cs" />
+    <Compile Include="Contracts\Tiger\Model\Tiger.cs" />
     <Compile Include="ServiceFactory.cs" />
     <Compile Include="Contracts\Cat\Model\Cat.cs" />
     <Compile Include="Contracts\Dog\Model\Dog.cs" />
