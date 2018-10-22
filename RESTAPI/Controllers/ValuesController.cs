@@ -1,4 +1,5 @@
-﻿using System;
+﻿using API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,10 +10,21 @@ namespace RESTAPI.Controllers
 {
     public class ValuesController : ApiController
     {
+        private IAnimalService _animalService;
+
+        public ValuesController(IAnimalService animalService)
+        {
+            _animalService = animalService;
+        }
+
         // GET api/values
         public IEnumerable<string> Get()
         {
-            return new string[] { "value1", "value2" };
+            var catColor = _animalService.GetCat(new API.Contracts.Cat.Messaging.GetCatReq()).Cat.Color;
+            var dogColor = _animalService.GetDog(new API.Contracts.Dog.Messaging.GetDogReq()).Dog.Color;
+            var tigerColor = _animalService.GetTiger(new API.Contracts.Tiger.Messaging.GetTigerReq()).Tiger.Color;
+
+            return new string[] { catColor, dogColor, tigerColor };
         }
 
         // GET api/values/5

@@ -66,11 +66,11 @@ namespace WEB.App_Start
             
             // Option 1: We can connect to a Service using ServiceFactory that is hosted 
             // either in windows service or IIS.
-            // kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService());
+            kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService());
 
             // Option 2: We can connect to a Service using ServiceFactory that is not hosted but uses the DEV web project.
             // The DEV web project connects internally to WCF project.
-            kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService("http://localhost:54396/api"));
+            // kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService("http://localhost:54396/api"));
         }
     }
 }
