@@ -70,7 +70,7 @@ namespace API
             }
         }
 
-        public static IAnimalService GetAnimalService(string http)
+        public static IAnimalService GetAnimalService(string http = "http://localhost:54396/api")
         {
             ChannelFactory<IAnimalService> channelFactory = null;
 
