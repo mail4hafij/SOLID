@@ -247,9 +247,9 @@
       <Project>{562efe4c-de70-4c2a-bc88-7c6c1b9395af}</Project>
       <Name>API</Name>
     </ProjectReference>
-    <ProjectReference Include="..\WCF\WCF.csproj">
-      <Project>{4c049089-8cc3-4e06-a8a6-a473c6686309}</Project>
-      <Name>WCF</Name>
+    <ProjectReference Include="..\SRC\SRC.csproj">
+      <Project>{aa311f78-84eb-4617-95ac-f4d70947ca8c}</Project>
+      <Name>SRC</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

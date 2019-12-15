@@ -1,7 +1,7 @@
 ﻿using System.ServiceModel.Activation;
 using System.Web.Mvc;
 using System.Web.Routing;
-using WCF;
+using SRC;
 
 namespace DEV
 {
@@ -11,7 +11,7 @@ namespace DEV
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            // Binding AnimalService from WCF project directly wihthout the need for WCF host.
+            // Binding AnimalService from SRC project directly wihthout the need for WCF host.
             routes.Add(new ServiceRoute("api", new Ninject.Extensions.Wcf.NinjectServiceHostFactory(), typeof(AnimalService))
             {
                 Constraints = new RouteValueDictionary(new { controller = string.Empty, action = string.Empty })

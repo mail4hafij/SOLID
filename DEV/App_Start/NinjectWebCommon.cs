@@ -40,8 +40,8 @@ namespace WEB.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            // Here we are going to use WCF container.
-            var kernel = new WCF.Ioc.Container()._kernel;
+            // Here we are going to use SRC container.
+            var kernel = new SRC.Ioc.Container()._kernel;
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
@@ -64,8 +64,8 @@ namespace WEB.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             // Do all the bindings here.
-            // Also look up at the CreateKernel method where we use kernel from WCF.
-            kernel.Bind<IAnimalService>().To<WCF.AnimalService>();
+            // Also look up at the CreateKernel method where we use kernel from SRC.
+            kernel.Bind<IAnimalService>().To<SRC.AnimalService>();
         }
     }
 }

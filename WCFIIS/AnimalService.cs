@@ -10,17 +10,17 @@ namespace WCFIIS
     {
         public GetCatResp GetCat(GetCatReq req)
         {
-            return new GetCatResp() { Cat = new API.Contracts.Cat.Model.Cat() { Color = "White" } };
+            return new GetCatResp() { Cat = new API.Contracts.Cat.Model.Cat() { Color = "Hello" } };
         }
 
         public GetDogResp GetDog(GetDogReq req)
         {
-            return new GetDogResp() { Dog = new API.Contracts.Dog.Model.Dog() { Color = "Black" } };
+            return new GetDogResp() { Dog = new API.Contracts.Dog.Model.Dog() { Color = "World" } };
         }
 
         public GetTigerResp GetTiger(GetTigerReq req)
         {
-            return new GetTigerResp() { Tiger = new API.Contracts.Tiger.Model.Tiger() { Color = "Yellow" } };
+            return new GetTigerResp() { Tiger = new API.Contracts.Tiger.Model.Tiger() { Color = "Lipsum" } };
         }
     }
 }

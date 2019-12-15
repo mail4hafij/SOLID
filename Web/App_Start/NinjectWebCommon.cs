@@ -69,7 +69,7 @@ namespace WEB.App_Start
             // kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService());
 
             // Option 2: We can connect to a Service using ServiceFactory that is not hosted but uses the DEV web project.
-            // The DEV web project connects internally to WCF project. (I think, this can be used in local environment).
+            // The DEV web project connects internally to SRC project. (I think, this can be used in local environment).
             kernel.Bind<IAnimalService>().ToMethod(svc => ServiceFactory.GetAnimalService("http://localhost:54396/api"));
         }
     }
