@@ -39,4 +39,4 @@ WEB
   - Depends on API.
   
   
-How to run locally: Make sure to update the connection strings in WCF, DEV with your local database host address. Create two databases "HelloWorld" and "LoremIpsum". Create tables for Cats, Dogs, Tigers and populate some default data.
+How to run locally: Make sure to update the connection strings in WCF, DEV with your local database host address. Create two databases "HelloWorld" and "LoremIpsum". Create tables Cats, Dogs, and Tigers. Populate some default data.
