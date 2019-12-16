@@ -30,12 +30,12 @@ DEV
   
 
 RESTAPI
-  - This is the restful API implentation project. It either can listen to WCF / WCFIIS / DEV.
+  - This is the restful API implentation project. It can listen to WCF / WCFIIS / DEV.
   - Depends on API.
   
 
 WEB 
-  - This is the public website. It either can listen to WCF / WCFISS/ DEV.
+  - This is the public website. It can listen to WCF / WCFISS/ DEV.
   - Depends on API.
   
   
