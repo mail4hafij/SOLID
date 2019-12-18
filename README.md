@@ -1,6 +1,6 @@
 # HelloWorld
 
-The purpose of this solution is to have everything ready, to start a new solution from scratch. There are 8 projects. 
+The purpose of this solution is to have everything ready, to start a new web based solution from scratch. The solution is based on SOLID design principals. There are 8 projects. 
 
 
 API 
