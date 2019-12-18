@@ -70,7 +70,7 @@ namespace API
             }
         }
 
-        public static IAnimalService GetAnimalService(string http = "http://localhost:54396/api")
+        public static IAnimalService GetAnimalService(string devURL = "http://localhost:54396/api")
         {
             ChannelFactory<IAnimalService> channelFactory = null;
 
@@ -80,7 +80,7 @@ namespace API
                 BasicHttpBinding httpBinding = new BasicHttpBinding();
             
                 // EndPoint address 
-                EndpointAddress endpointAddress = new EndpointAddress(http);
+                EndpointAddress endpointAddress = new EndpointAddress(devURL);
                 
                 // Pass Binding and EndPoint address to ChannelFactory using httpBinding
                 channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddress);
