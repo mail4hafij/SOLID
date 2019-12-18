@@ -1,6 +1,6 @@
 # HelloWorld
 
-There are 7 projects. 
+The purpose of this solution is to have everything ready, to start a new solution from scratch. There are 8 projects. 
 
 
 API 
@@ -12,6 +12,11 @@ SRC
   - Default implementation of the API contract.
   - UnitOfWork, Databases, Repositories, Logics, Mappers, etc. 
   - Depends on API.
+
+
+SRC.TEST
+  - Unit test, integration test.
+  - Depends on API, SRC.
 
 
 WCF 
@@ -39,4 +44,5 @@ WEB
   - Depends on API.
   
   
-How to run locally: Make sure to update the connection strings in WCF, DEV with your local database host address. Create two databases "HelloWorld" and "LoremIpsum". Create tables Cats, Dogs, and Tigers. Populate some default data.
+How to run locally: 
+Make sure to update the connection strings in WCF (App.config), DEV (Web.config), SRC.TEST (TestStaticConfig) with your local database host address. Create two databases "HelloWorld" and "LoremIpsum". Create tables Cats, Dogs, and Tigers. Populate some default data.
