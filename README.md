@@ -46,7 +46,5 @@ WEB
   
 How to run locally
 
-  - Create two databases "HelloWorld" and "LoremIpsum". Create tables HelloWorld => Cats, Dogs and LoremIpsum => Tigers. Each       
-    table has only two columns (i.e., CatId, Color). Populate some default data.
-  - Make sure to update the connection strings in WCF (App.config), DEV (Web.config), SRC.TEST (TestStaticConfig) with your 
-    local database host address. 
+  - Create two databases "HelloWorld" and "LoremIpsum". Create tables HelloWorld => Cats, Dogs and LoremIpsum => Tigers. Each  table has only two columns (i.e., CatId, Color). Populate some default data.
+  - Make sure to update the connection strings in WCF (App.config), DEV (Web.config), SRC.TEST (TestStaticConfig) with your local database host address. 
