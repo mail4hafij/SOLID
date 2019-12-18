@@ -26,7 +26,7 @@ WCF
   
 WCFISS 
   - IIS hosted WCF service. (At the moment it is not exposing SRC). Only some dummy implementation of the API contract.
-  - Depends on API, SRC.
+  - Depends on API.
   
   
 DEV
