@@ -67,11 +67,15 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Cats.cs" />
+    <Compile Include="Data\Dogs.cs" />
+    <Compile Include="Data\Tigers.cs" />
     <Compile Include="Ioc\TestContainer.cs" />
+    <Compile Include="TestDataBase.cs" />
     <Compile Include="TestStaticConfig.cs" />
     <Compile Include="IntegrationTest\BasicTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UnitTest.cs" />
+    <Compile Include="BaseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

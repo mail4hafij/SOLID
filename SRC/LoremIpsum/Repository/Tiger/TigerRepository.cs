@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using SRC.LIB;
+using SRC.LoremIpsum.Data.Model;
 
 namespace SRC.LoremIpsum.Repository.Tiger
 {
@@ -14,6 +14,11 @@ namespace SRC.LoremIpsum.Repository.Tiger
         public List<SRC.LoremIpsum.Data.Model.Tiger> LoadAll()
         {
             return _unitOfWork.Context.Tigers.ToList<Data.Model.Tiger>();
+        }
+
+        public void Add(SRC.LoremIpsum.Data.Model.Tiger tiger)
+        {
+            _unitOfWork.Context.Tigers.Add(tiger);
         }
     }
 }

@@ -15,5 +15,10 @@ namespace SRC.HelloWorld.Repository.Cat
         {
             return _unitOfWork.Context.Cats.ToList<Data.Model.Cat>();
         }
+
+        public void Add(SRC.HelloWorld.Data.Model.Cat cat)
+        {
+            _unitOfWork.Context.Cats.Add(cat);
+        }
     }
 }

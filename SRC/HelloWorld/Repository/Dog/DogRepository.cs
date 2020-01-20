@@ -15,5 +15,10 @@ namespace SRC.HelloWorld.Repository.Dog
         {
             return _unitOfWork.Context.Dogs.ToList<Data.Model.Dog>();
         }
+
+        public void Add(SRC.HelloWorld.Data.Model.Dog dog)
+        {
+            _unitOfWork.Context.Dogs.Add(dog);
+        }
     }
 }
