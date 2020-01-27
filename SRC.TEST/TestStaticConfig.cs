@@ -6,8 +6,11 @@ namespace SRC.TEST
     {
         public TestStaticConfig()
         {
-            ConnectionStringHelloWorld = "Data Source=.;Initial Catalog=helloworld;Integrated Security=true;";
-            ConnectionStringLoremIpsum = "Data Source=.;Initial Catalog=loremipsum;Integrated Security=true;";
+            var helloWorld = ConfigurationManager.ConnectionStrings["HelloWorld"];
+            ConnectionStringHelloWorld = helloWorld?.ConnectionString;
+
+            var loremIpsum = ConfigurationManager.ConnectionStrings["LoremIpsum"];
+            ConnectionStringLoremIpsum = loremIpsum?.ConnectionString;
         }
 
         public string ConnectionStringHelloWorld { get; protected set; }
