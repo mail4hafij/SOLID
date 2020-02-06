@@ -5,134 +5,63 @@ namespace API
 {
     public class ServiceFactory
     {
-        public static IAnimalService GetAnimalServiceFromIIS()
+        public static IAnimalService GetAnimalService(string connection)
         {
-            // Create a ChannelFactory  
             ChannelFactory<IAnimalService> channelFactory = null;
 
             try
             {
-                // Create a binding of the type exposed by service  
-                BasicHttpBinding httpBinding = new BasicHttpBinding();
-                // EndPoint address hosted in IIS 
-                EndpointAddress endpointAddress = new EndpointAddress("http://localhost:8733/WCFIIS/AnimalService");
-                // Pass Binding and EndPoint address to ChannelFactory using httpBinding
-                channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddress);
-                // Now create the new channel as below  
-                IAnimalService channel = channelFactory.CreateChannel();
-
-                return channel;
-            }
-            catch (TimeoutException)
-            {
-                // Timeout error  
-                if (channelFactory != null)
-                    channelFactory.Abort();
-
-                throw;
-            }
-            catch (FaultException)
-            {
-                if (channelFactory != null)
-                    channelFactory.Abort();
-
-                throw;
-            }
-            catch (CommunicationException)
-            {
-                // Communication error  
-                if (channelFactory != null)
-                    channelFactory.Abort();
-
-                throw;
-            }
-            catch (Exception)
-            {
-                if (channelFactory != null)
-                    channelFactory.Abort();
-
-                throw;
-            }
-        }
-
-        public static IAnimalService GetAnimalServiceFromWCF(bool tcp = true)
-        {
-            // Create a ChannelFactory  
-            ChannelFactory<IAnimalService> channelFactory = null;
-
-            try
-            {
-                if(tcp)
+                if(connection.StartsWith("net.tcp"))
                 {
+                    // TODO: some security credential can be added
                     // Create a binding of the type exposed by service  
                     NetTcpBinding tcpBinding = new NetTcpBinding();
                     // EndPoint tcp address selfhosted
-                    EndpointAddress endpointAddressTcp = new EndpointAddress("net.tcp://localhost:8735/WCF/AnimalService");
+                    EndpointAddress endpointAddressTcp = new EndpointAddress(connection);
                     // Pass Binding and EndPoint address to ChannelFactory using tcpBinding
                     channelFactory = new ChannelFactory<IAnimalService>(tcpBinding, endpointAddressTcp);
+                    // Now create the new channel as below
+                    IAnimalService channel = channelFactory.CreateChannel();
+                    return channel;
+                }
+                else if (connection.StartsWith("https"))
+                {
+                    // HTTPS
+                    // Create a binding of the type exposed by service  
+                    BasicHttpsBinding httpsBinding = new BasicHttpsBinding();
+                    httpsBinding.Security.Mode = BasicHttpsSecurityMode.Transport;
+                    // No credential is needed to connect to the host service.
+                    httpsBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+
+                    // EndPoint address 
+                    EndpointAddress endpointAddress = new EndpointAddress(connection);
+                    // Pass Binding and EndPoint address to ChannelFactory using httpBinding
+                    channelFactory = new ChannelFactory<IAnimalService>(httpsBinding, endpointAddress);
+                    // Now create the new channel as below
+                    IAnimalService channel = channelFactory.CreateChannel();
+                    return channel;
 
                 }
-                else
+                else if(connection.StartsWith("http"))
                 {
+                    // HTTP
                     // Create a binding of the type exposed by service  
                     BasicHttpBinding httpBinding = new BasicHttpBinding();
-                    // EndPoint http address selfhosted
-                    EndpointAddress endpointAddressHttp = new EndpointAddress("http://localhost:8734/WCF/AnimalService");
+                    httpBinding.Security.Mode = BasicHttpSecurityMode.None;
+                    // No credential is needed to connect to the host service.
+                    httpBinding.Security.Transport.ClientCredentialType = HttpClientCredentialType.None;
+
+                    // EndPoint address 
+                    EndpointAddress endpointAddress = new EndpointAddress(connection);
                     // Pass Binding and EndPoint address to ChannelFactory using httpBinding
-                    channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddressHttp);
+                    channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddress);
+                    // Now create the new channel as below
+                    IAnimalService channel = channelFactory.CreateChannel();
+                    return channel;
                 }
 
-                // Now create the new channel as below  
-                IAnimalService channel = channelFactory.CreateChannel();
-                return channel;
-            }
-            catch (TimeoutException)
-            {
-                // Timeout error  
-                if (channelFactory != null)
-                    channelFactory.Abort();
+                throw new Exception("No valid connection protocol was found");
 
-                throw;
-            }
-            catch (FaultException)
-            {
-                if (channelFactory != null)
-                    channelFactory.Abort();
-
-                throw;
-            }
-            catch (CommunicationException)
-            {
-                // Communication error  
-                if (channelFactory != null)
-                    channelFactory.Abort();
-
-                throw;
-            }
-            catch (Exception)
-            {
-                if (channelFactory != null)
-                    channelFactory.Abort();
-
-                throw;
-            }
-        }
-
-        public static IAnimalService GetAnimalServiceFromDev()
-        {
-            ChannelFactory<IAnimalService> channelFactory = null;
-
-            try
-            {
-                // Create a binding of the type exposed by service  
-                BasicHttpBinding httpBinding = new BasicHttpBinding();
-                // EndPoint address 
-                EndpointAddress endpointAddress = new EndpointAddress("http://localhost:54396/api");
-                // Pass Binding and EndPoint address to ChannelFactory using httpBinding
-                channelFactory = new ChannelFactory<IAnimalService>(httpBinding, endpointAddress);
-                // Now create the new channel as below
-                IAnimalService channel = channelFactory.CreateChannel();
-                return channel;
             }
             catch (TimeoutException)
             {
