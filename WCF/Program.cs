@@ -27,8 +27,6 @@ namespace WCF
                 // Option2: Much preferable way I think. See the class Container.
                 var container = new Container();
                 var handler = container.Get<IHandlerCaller>();
-                
-
                 var animalService = new AnimalService(handler);
                 svcHost = new ServiceHost(animalService);
                 svcHost.Open();
