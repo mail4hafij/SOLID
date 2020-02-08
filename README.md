@@ -22,12 +22,13 @@ SRC.TEST
 WCF 
   - Host a WCF service to expose SRC via http or tcp protocol.
   - Depends on API, SRC.
+  - Make sure to run this locally with Admin privilege.
   
   
 WCFISS 
   - IIS hosted WCF service. (At the moment it is not exposing SRC). Only some dummy implementation of the API contract.
   - Depends on API.
-  - Make sure to run this locally with Admin privilage.
+  - Make sure to run this locally with Admin privilege.
   
   
 DEV
@@ -36,7 +37,7 @@ DEV
   
 
 RESTAPI
-  - This is the restful API implentation project. It can listen to WCF / WCFIIS / DEV.
+  - This is the restful API implementation project. It can listen to WCF / WCFIIS / DEV.
   - Locally it is listening to WCF(http) project.
   - Depends on API.
   
