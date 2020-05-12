@@ -1,32 +1,32 @@
-﻿using API;
-using Microsoft.Web.Infrastructure.DynamicModuleHelper;
-using Ninject;
-using Ninject.Web.Common;
-using Ninject.Web.Common.WebHost;
-using Ninject.Web.WebApi;
-using RESTAPI.App_Start;
-using System;
-using System.Configuration;
-using System.Web;
-using System.Web.Http;
-
-[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NinjectWebCommon), "Start")]
-[assembly: WebActivatorEx.ApplicationShutdownMethod(typeof(NinjectWebCommon), "Stop")]
+[assembly: WebActivatorEx.PreApplicationStartMethod(typeof(RESTAPI.App_Start.NinjectWebCommon), "Start")]
+[assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(RESTAPI.App_Start.NinjectWebCommon), "Stop")]
 
 namespace RESTAPI.App_Start
 {
-    public static class NinjectWebCommon
+    using System;
+    using System.Configuration;
+    using System.Web;
+    using System.Web.Http;
+    using API;
+    using Microsoft.Web.Infrastructure.DynamicModuleHelper;
+
+    using Ninject;
+    using Ninject.Web.Common;
+    using Ninject.Web.Common.WebHost;
+    using Ninject.Web.WebApi;
+
+    public static class NinjectWebCommon 
     {
-        private static readonly Bootstrapper _bootstrapper = new Bootstrapper();
+        private static readonly Bootstrapper bootstrapper = new Bootstrapper();
 
         /// <summary>
-        /// Starts the application
+        /// Starts the application.
         /// </summary>
-        public static void Start()
+        public static void Start() 
         {
             DynamicModuleUtility.RegisterModule(typeof(OnePerRequestHttpModule));
             DynamicModuleUtility.RegisterModule(typeof(NinjectHttpModule));
-            _bootstrapper.Initialize(CreateKernel);
+            bootstrapper.Initialize(CreateKernel);
         }
 
         /// <summary>
@@ -34,7 +34,7 @@ namespace RESTAPI.App_Start
         /// </summary>
         public static void Stop()
         {
-            _bootstrapper.ShutDown();
+            bootstrapper.ShutDown();
         }
 
         /// <summary>
@@ -48,9 +48,8 @@ namespace RESTAPI.App_Start
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
-
                 RegisterServices(kernel);
-                
+
                 // This following line is needed if we want to use ninject to construct the controllers, 
                 // and I presume that is why we are using ninject inside a Web Api project.
                 GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
