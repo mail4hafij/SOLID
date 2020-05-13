@@ -2,6 +2,7 @@
 
 The purpose of this solution is to have everything ready, to start a new web based solution from scratch. The solution is based on SOLID design principals. There are 8 projects. 
 
+<img src="HelloWorld.jpg" />
 
 API 
   - The contract.
