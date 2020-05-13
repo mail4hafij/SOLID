@@ -192,9 +192,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="LIB\IModel.cs" />
-    <Compile Include="LIB\IPostbackData.cs" />
-    <Compile Include="Models\Animal\AddAnimal.cs" />
+    <Compile Include="LIB\IPostback.cs" />
+    <Compile Include="Models\Animal\AddAnimalModel.cs" />
     <Compile Include="Models\Animal\AddAnimalForm.cs" />
+    <Compile Include="Models\Animal\AddAnimalPostback.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

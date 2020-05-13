@@ -4,6 +4,6 @@ namespace SRC.HelloWorld.Logic
 {
     public interface IHelloWorldLogicFactory
     {
-        IAnimalLogic CreateStatusUpdateLogic(IHelloWorldUnitOfWork unitOfWork);
+        IAnimalLogic CreateAnimalLogic(IHelloWorldUnitOfWork unitOfWork);
     }
 }

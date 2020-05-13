@@ -1,6 +1,7 @@
 ﻿using API;
 using System;
 using System.Web.Mvc;
+using WEB.Models.Animal;
 
 namespace WEB.Controllers
 {
@@ -17,28 +18,27 @@ namespace WEB.Controllers
         public ActionResult Index()
         {
             var respCat = _svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq());
-            if (respCat.Success != true && respCat.ExceptionError != null && respCat.ExceptionError.StackTrace != null)
-            {
-                throw new Exception(respCat.ExceptionError.StackTrace);
-            }
-
             var respDog = _svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq());
-            if (respDog.Success != true && respDog.ExceptionError != null && respDog.ExceptionError.StackTrace != null)
-            {
-                throw new Exception(respDog.ExceptionError.StackTrace);
-            }
-
             var respTiger = _svc.GetTiger(new API.Contracts.Tiger.Messaging.GetTigerReq());
-            if (respTiger.Success != true && respTiger.ExceptionError !=null && respTiger.ExceptionError != null)
-            {
-                throw new Exception(respTiger.ExceptionError.StackTrace);
-            }
-
+            
             ViewBag.colorCat = respCat.Cat.Color;
             ViewBag.colorDog = respDog.Dog.Color;
             ViewBag.colorTiger = respTiger.Tiger.Color;
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AddAnimal(AddAnimalPostback data)
+        {
+            var catColor = data.Form.CatColor;
+            var dogColor = data.Form.DogColor;
+            
+            _svc.AddAnimals(new API.Contracts.Animals.Messaging.AddAnimalsReq() {
+                CatColor = catColor, DogColor = dogColor
+            });
+
+            return RedirectToAction("Index");
         }
 
         public ActionResult About()

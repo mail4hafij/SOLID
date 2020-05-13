@@ -19,6 +19,9 @@ using SRC.LoremIpsum.Data;
 using SRC.LoremIpsum.Repository.Tiger;
 using SRC.LoremIpsum.Data.Mapper;
 using API.Contracts.Tiger.Messaging;
+using API.Contracts.Animals.Messaging;
+using SRC.Handler.Animal;
+using SRC.HelloWorld.Logic.Animal;
 
 namespace SRC.Ioc
 {
@@ -70,7 +73,8 @@ namespace SRC.Ioc
 
         private void BindLogic()
         {
-
+            // (hellworld)
+            _kernel.Bind<IAnimalLogic>().To<AnimalLogic>();
         }
 
         private void BindFactories()
@@ -96,6 +100,9 @@ namespace SRC.Ioc
 
             // (loremipsum)
             _kernel.Bind<RequestHandler<GetTigerReq, GetTigerResp>>().To<GetTigerHandler>();
+
+            // AddAnimals
+            _kernel.Bind<RequestHandler<AddAnimalsReq, AddAnimalsResp>>().To<AddAnimalsHandler>();
         }
 
 

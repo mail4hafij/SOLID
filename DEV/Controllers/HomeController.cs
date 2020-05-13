@@ -17,17 +17,8 @@ namespace DEV.Controllers
         public ActionResult Index()
         {
             var respCat = _svc.GetCat(new API.Contracts.Cat.Messaging.GetCatReq());
-            if (respCat.Success != true && respCat.ExceptionError != null && respCat.ExceptionError.StackTrace != null)
-            {
-                throw new Exception(respCat.ExceptionError.StackTrace);
-            }
-
             var respDog = _svc.GetDog(new API.Contracts.Dog.Messaging.GetDogReq());
-            if (respDog.Success != true && respDog.ExceptionError != null && respDog.ExceptionError.StackTrace != null)
-            {
-                throw new Exception(respDog.ExceptionError.StackTrace);
-            }
-
+            
             ViewBag.colorCat = respCat.Cat.Color;
             ViewBag.colorDog = respDog.Dog.Color;
                         

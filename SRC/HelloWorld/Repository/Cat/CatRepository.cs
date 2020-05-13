@@ -13,7 +13,7 @@ namespace SRC.HelloWorld.Repository.Cat
 
         public List<SRC.HelloWorld.Data.Model.Cat> LoadAll()
         {
-            return _unitOfWork.Context.Cats.ToList<Data.Model.Cat>();
+            return _unitOfWork.Context.Cats.OrderByDescending(c => c.CatId).ToList<Data.Model.Cat>();
         }
 
         public void Add(SRC.HelloWorld.Data.Model.Cat cat)

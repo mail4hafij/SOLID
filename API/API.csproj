@@ -51,6 +51,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\Animals\Messaging\AddAnimalsReq.cs" />
+    <Compile Include="Contracts\Animals\Messaging\AddAnimalsResp.cs" />
     <Compile Include="Contracts\Cat\Messaging\GetCatReq.cs" />
     <Compile Include="Contracts\Cat\Messaging\GetCatResp.cs" />
     <Compile Include="Contracts\Dog\Messaging\GetDogReq.cs" />
@@ -68,7 +70,9 @@
     <Compile Include="IAnimalService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Contracts\Animals\Model\" />
+  </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>

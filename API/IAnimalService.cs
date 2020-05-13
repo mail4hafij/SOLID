@@ -1,4 +1,5 @@
-﻿using API.Contracts.Cat.Messaging;
+﻿using API.Contracts.Animals.Messaging;
+using API.Contracts.Cat.Messaging;
 using API.Contracts.Dog.Messaging;
 using API.Contracts.Tiger.Messaging;
 using System.ServiceModel;
@@ -16,5 +17,8 @@ namespace API
 
         [OperationContract]
         GetTigerResp GetTiger(GetTigerReq req);
+
+        [OperationContract]
+        AddAnimalsResp AddAnimals(AddAnimalsReq req);
     }
 }

@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AnimalService.cs" />
+    <Compile Include="Handler\Animal\AddAnimalsHandler.cs" />
     <Compile Include="Handler\Cat\GetCatHandler.cs" />
     <Compile Include="Handler\Dog\GetDogHandler.cs" />
     <Compile Include="Handler\Tiger\GetTigerHandler.cs" />

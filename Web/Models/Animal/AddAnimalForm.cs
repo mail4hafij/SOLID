@@ -9,8 +9,5 @@ namespace WEB.Models.Animal
 
         [Required(ErrorMessage = @"missing")]
         public string DogColor { get; set; }
-
-        [Required(ErrorMessage = @"missing")]
-        public string TigerColor { get; set; }
     }
 }

@@ -74,6 +74,7 @@
     <Compile Include="Data\Cats.cs" />
     <Compile Include="Data\Dogs.cs" />
     <Compile Include="Data\Tigers.cs" />
+    <Compile Include="IntegrationTest\AnimalLogicTest.cs" />
     <Compile Include="Ioc\TestContainer.cs" />
     <Compile Include="TestDataBase.cs" />
     <Compile Include="TestStaticConfig.cs" />

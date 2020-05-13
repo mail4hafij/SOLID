@@ -13,7 +13,7 @@ namespace SRC.HelloWorld.Repository.Dog
 
         public List<SRC.HelloWorld.Data.Model.Dog> LoadAll()
         {
-            return _unitOfWork.Context.Dogs.ToList<Data.Model.Dog>();
+            return _unitOfWork.Context.Dogs.OrderByDescending(d => d.DogId).ToList<Data.Model.Dog>();
         }
 
         public void Add(SRC.HelloWorld.Data.Model.Dog dog)

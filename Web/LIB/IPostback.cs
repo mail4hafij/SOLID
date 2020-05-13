@@ -1,6 +1,6 @@
 ﻿namespace WEB.LIB
 {
-    public interface IPostbackData<T>
+    public interface IPostback<T>
     {
         T Form { get; set; }
     }

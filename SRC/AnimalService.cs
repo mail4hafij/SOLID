@@ -4,6 +4,7 @@ using API.Contracts.Dog.Messaging;
 using API.Contracts.Tiger.Messaging;
 using System.ServiceModel;
 using SRC.LIB;
+using API.Contracts.Animals.Messaging;
 
 namespace SRC
 {
@@ -17,6 +18,8 @@ namespace SRC
         public GetDogResp GetDog(GetDogReq req) => Process<GetDogReq, GetDogResp>(req);
 
         public GetTigerResp GetTiger(GetTigerReq req) => Process<GetTigerReq, GetTigerResp>(req);
+
+        public AddAnimalsResp AddAnimals(AddAnimalsReq req) => Process<AddAnimalsReq, AddAnimalsResp>(req);
 
     }
 }
