@@ -4,18 +4,18 @@
     ViewBag.Title = "Home Page";
 }
 
-    <div class="jumbotron">
-        <h1>Real web page @ViewBag.colorCat and @ViewBag.colorDog and @ViewBag.colorTiger</h1>
-        @using (Html.BeginForm("AddAnimal", "Home", FormMethod.Post))
-        {
-            <div>
-                Cat: @Html.TextBoxFor(m => m.Form.CatColor) Dog: @Html.TextBoxFor(m => m.Form.DogColor) <input type="submit" value="Submit" class="submit" />
-            </div>
-        }
+<div class="jumbotron">
+    <h1>Real web page @ViewBag.colorCat and @ViewBag.colorDog and @ViewBag.colorTiger</h1>
+    @using (Html.BeginForm("AddAnimal", "Home", FormMethod.Post))
+    {
+        <div>
+            Cat: @Html.TextBoxFor(m => m.Form.CatColor) Dog: @Html.TextBoxFor(m => m.Form.DogColor) <input type="submit" value="Submit" class="submit" />
+        </div>
+    }
 
-        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-        <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-    </div>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
 
 <div class="row">
     <div class="col-md-4">

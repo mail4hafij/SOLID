@@ -1,5 +1,4 @@
-﻿
-using SRC.HelloWorld.Repository;
+﻿using SRC.HelloWorld.Repository;
 
 namespace SRC.HelloWorld.Logic.Animal
 {

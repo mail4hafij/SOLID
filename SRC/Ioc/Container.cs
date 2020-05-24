@@ -97,12 +97,12 @@ namespace SRC.Ioc
             // (helloworld)
             _kernel.Bind<RequestHandler<GetCatReq, GetCatResp>>().To<GetCatHandler>();
             _kernel.Bind<RequestHandler<GetDogReq, GetDogResp>>().To<GetDogHandler>();
+            // AddAnimals
+            _kernel.Bind<RequestHandler<AddAnimalsReq, AddAnimalsResp>>().To<AddAnimalsHandler>();
+
 
             // (loremipsum)
             _kernel.Bind<RequestHandler<GetTigerReq, GetTigerResp>>().To<GetTigerHandler>();
-
-            // AddAnimals
-            _kernel.Bind<RequestHandler<AddAnimalsReq, AddAnimalsResp>>().To<AddAnimalsHandler>();
         }
 
 
