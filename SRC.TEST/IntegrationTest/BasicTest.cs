@@ -4,7 +4,7 @@ using API.Contracts.Dog.Messaging;
 using API.Contracts.Tiger.Messaging;
 
 
-namespace SRC.TEST.InegrationTest
+namespace SRC.TEST.IntegrationTest
 {
     [TestClass]
     public class BasicTest : BaseTest
