@@ -49,10 +49,12 @@ namespace RESTAPI.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
                 RegisterServices(kernel);
-
-                // This following line is needed if we want to use ninject to construct the controllers, 
-                // and I presume that is why we are using ninject inside a Web Api project.
+                
+                
+                // VERY IMPORTANT: ONLY FOR WEBAPI PROJECTS.
+                // This following line is needed if we want to use ninject to construct the api controllers.
                 GlobalConfiguration.Configuration.DependencyResolver = new NinjectDependencyResolver(kernel);
+
 
                 return kernel;
             }
