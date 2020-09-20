@@ -1,8 +1,10 @@
-# HelloWorld
+# SOLID
 
 The purpose of this solution is to have everything ready, to start a new web based solution from scratch. The solution is based on SOLID design principals. There are 8 projects. 
 
-<img src="HelloWorld.jpg" />
+Technology stack: C#, .Net Framework 4.6, Rest API, WCF, Ninject, MSSQL, etc.
+
+<img src="Solid.jpg" />
 
 API 
   - The contract.
