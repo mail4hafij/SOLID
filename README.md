@@ -1,10 +1,22 @@
 # SOLID
 
-The purpose of this solution is to have everything ready, to start a new web based solution from scratch. The solution is based on SOLID design principals. There are 8 projects. 
+The purpose of this solution is to have everything ready, to start a new web based solution from scratch. The solution is based on SOLID design principals. There are five principles:
+
+  - Single Responsibility Principle (SRP)
+
+  - Open Closed Principle (OCP)
+
+  - Liskov Substitution Principle (LSP)
+
+  - Interface Segregation Principle (ISP)
+
+  - Dependency Inversion Principle (DIP)
 
 Technology stack: C#, .Net Framework 4.6, Rest API, WCF, Ninject, MSSQL, etc.
 
 <img src="Solid.jpg" />
+
+There are in total 8 projects in this solution.
 
 API 
   - The contract.
