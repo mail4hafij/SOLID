@@ -16,7 +16,7 @@ Technology stack: C#, .Net Framework 4.6, Rest API, WCF, Ninject, MSSQL, etc.
 
 <img src="Solid.jpg" />
 
-There are in total 8 projects in this solution.
+There are 8 projects in this solution.
 
 API 
   - The contract.
