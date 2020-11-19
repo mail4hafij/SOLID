@@ -1,6 +1,6 @@
 # SOLID
 
-The idea here is to demonstrate how we can design a web solution following the SOLID design principles. There are five principles:
+The idea here is to design a web solution following the SOLID design principles. There are five principles:
 
   - Single Responsibility Principle (SRP): A class should have a single reponsibility.
 
