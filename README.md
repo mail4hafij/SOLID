@@ -1,16 +1,16 @@
 # SOLID
 
-The purpose of this solution is to have everything ready, to start a new web based solution from scratch. The solution is based on SOLID design principals. There are five principles:
+The idea here is to demonstrate how we can design a web solution following the SOLID design principles. There are five principles:
 
-  - Single Responsibility Principle (SRP)
+  - Single Responsibility Principle (SRP): A class should have a single reponsibility.
 
-  - Open Closed Principle (OCP)
+  - Open Closed Principle (OCP) - Should be open for extension but clossed for modification.
 
-  - Liskov Substitution Principle (LSP)
+  - Liskov Substitution Principle (LSP) - Base class instance should be replacable by its sub class instance.
 
-  - Interface Segregation Principle (ISP)
+  - Interface Segregation Principle (ISP) - Multiple useful interfaces.
 
-  - Dependency Inversion Principle (DIP)
+  - Dependency Inversion Principle (DIP) - High level modules should not depend on low level module, both should depend on abstractions.
 
 Technology stack: C#, .Net Framework 4.6, Rest API, WCF, Ninject, MSSQL, etc.
 
