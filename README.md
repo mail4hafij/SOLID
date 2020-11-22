@@ -2,9 +2,9 @@
 
 The idea here is to design a web solution following the SOLID design principles. There are five principles:
 
-  - Single Responsibility Principle (SRP): A class should have a single reponsibility.
+  - Single Responsibility Principle (SRP): A class should have single reponsibility.
 
-  - Open Closed Principle (OCP) - Should be open for extension but clossed for modification.
+  - Open Closed Principle (OCP) - Should be open for extension but closse for modification.
 
   - Liskov Substitution Principle (LSP) - Base class instance should be replacable by its sub class instance.
 
