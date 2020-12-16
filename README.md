@@ -14,6 +14,7 @@ The idea here is to design a web solution following the SOLID design principles.
 
 Technology stack: C#, .Net Framework 4.6, Rest API, WCF, Ninject, MSSQL, etc.
 
+## Conceptual model
 <img src="Solid.jpg" />
 
 There are 8 projects in this solution.
